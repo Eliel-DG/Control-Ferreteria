@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <table class="table table-primary table-striped">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Marca</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th colspan="2">Operaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of ferreteriaService.Ferreteria">
+                    <td>{{producto.codigo}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.marca}}</td>
+                    <td>{{producto.stock}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="getProducto(producto)">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="eliminarProducto(producto.codigo)">
+                            <i class="material-icons">delete</i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
